@@ -1,0 +1,84 @@
+<style>
+    .sharebuttons {
+        margin: 0 auto;
+    }
+
+    .sharebuttons ul {
+        margin: 20px 0 0 0;
+        text-align: left;
+        /* Change this to left */
+        padding-left: 0;
+        /* Remove any default padding */
+    }
+
+    .sharebuttons ul li {
+        display: inline;
+    }
+
+    .sharebuttons ul li a {
+        text-decoration: none;
+    }
+
+    .sharebuttons ul li svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .sharebuttons .reddit svg {
+        fill: #FF4500;
+    }
+
+    .sharebuttons .hn svg {
+        fill: #F0652F;
+    }
+
+    .sharebuttons .twitter svg {
+        fill: #1DA1F2;
+    }
+
+    .sharebuttons .linkedin svg {
+        fill: #0077B5;
+    }
+
+    .sharebuttons .whatsapp svg {
+        fill: #25D366;
+    }
+</style>
+
+<div class="sharebuttons">
+    <ul>
+        <li>
+            <p class="sharetitle"> Share this: </p>
+        </li>
+        <li class="reddit">
+            <a href="http://www.reddit.com/submit?url={{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url | uri_escape}}&title={{ page.title | default:"" | uri_escape }}"
+                target="_blank">
+                {% include social/reddit-color.svg %}
+            </a>
+        </li>
+        <li class="hn">
+            <a href="http://news.ycombinator.com/submitlink?u={{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url | uri_escape}}&t={{ page.title | default:"" | uri_escape}}"
+                target="_blank">
+                {% include social/ycombinator-color.svg %}
+            </a>
+        </li>
+        <li class="twitter">
+            <a href="https://twitter.com/intent/tweet?via=lvntkydev&url={{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url | uri_escape}}&text={{ page.title | default:"" | uri_escape}}"
+                target="_blank">
+                {% include social/x-color.svg %}
+            </a>
+        </li>
+        <li class="linkedin">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url | uri_escape}}&title={{ page.title | default:"" | uri_escape}}"
+                target="_blank">
+                {% include social/linkedin-color.svg %}
+            </a>
+        </li>
+        <li class="whatsapp">
+            <a href="https://web.whatsapp.com/send?text={{ page.title | default:"" | uri_escape }}%20{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url | uri_escape}}"
+                target="_blank">
+                {% include social/whatsapp-color.svg %}
+            </a>
+        </li>
+    </ul>
+</div>
