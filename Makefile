@@ -1,8 +1,8 @@
 # Makefile
 
 # Define variables
-JEKYLL_BUILD_CMD = jekyll build
-JEKYLL_SERVE_CMD = jekyll serve
+JEKYLL_BUILD_CMD = bundle exec jekyll build
+JEKYLL_SERVE_CMD = bundle exec jekyll serve
 TAGGEN_CMD = python3 taggenerator.py
 
 # Targets
@@ -24,4 +24,14 @@ serve: taggenerator
 clean:
 	rm -rf _site
 
-.PHONY: all build taggenerator serve clean
+# Ensure gems are installed before building or serving
+check_dependencies:
+	bundle install
+
+# Composite target for building with dependency check
+build_with_dependencies: check_dependencies build
+
+# Composite target for serving with dependency check
+serve_with_dependencies: check_dependencies serve
+
+.PHONY: all build taggenerator serve clean check_dependencies build_with_dependencies serve_with_dependencies
