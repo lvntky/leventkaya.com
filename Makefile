@@ -1,37 +1,41 @@
-# Makefile
+SHELL := /bin/bash
 
-# Define variables
-JEKYLL_BUILD_CMD = bundle exec jekyll build
-JEKYLL_SERVE_CMD = bundle exec jekyll serve
-TAGGEN_CMD = python3 taggenerator.py
+# --- Paths ---
+SITE_DIR   := blog
+BUILD_DIR  := $(SITE_DIR)/_site
+PORT       := 4000
 
-# Targets
-all: build
+# --- Defaults for rsync (override via env) ---
+RSYNC_OPTS ?= -avz --delete
 
-# Run taggenerator before building the site
-build: taggenerator
-	$(JEKYLL_BUILD_CMD)
+.PHONY: help install clean build serve check deploy-gh deploy-rsync
 
-# Run taggenerator
-taggenerator:
-	$(TAGGEN_CMD)
+help:
+	@echo "make install       # bundle install in $(SITE_DIR)"
+	@echo "make clean         # remove $(BUILD_DIR) and cache"
+	@echo "make build         # build Jekyll site from $(SITE_DIR) -> $(BUILD_DIR)"
+	@echo "make serve         # serve from $(SITE_DIR) on :$(PORT)"
+	@echo "make deploy-gh     # push-to-deploy (handled by GitHub Actions)"
+	@echo "make deploy-rsync  # rsync $(BUILD_DIR) to RSYNC_DEST (set env)"
 
-# Serve the site locally
-serve: taggenerator
-	$(JEKYLL_SERVE_CMD)
+install:
+	cd $(SITE_DIR) && bundle install
 
-# Clean the generated files
 clean:
-	rm -rf _site
+	rm -rf $(BUILD_DIR) $(SITE_DIR)/.jekyll-cache
 
-# Ensure gems are installed before building or serving
-check_dependencies:
-	bundle install
+build: install
+	cd $(SITE_DIR) && bundle exec jekyll build --source . --destination _site --trace
 
-# Composite target for building with dependency check
-build_with_dependencies: check_dependencies build
+serve: install
+	cd $(SITE_DIR) && bundle exec jekyll serve --livereload --port $(PORT)
 
-# Composite target for serving with dependency check
-serve_with_dependencies: check_dependencies serve
+check: build
+	@echo "Tip: add 'html-proofer' to $(SITE_DIR)/Gemfile for full checks."
 
-.PHONY: all build taggenerator serve clean check_dependencies build_with_dependencies serve_with_dependencies
+deploy-gh:
+	@echo "Push to main; GitHub Actions will build & deploy from $(SITE_DIR)."
+
+deploy-rsync: build
+	@if [ -z "$$RSYNC_DEST" ]; then echo "Set RSYNC_DEST=user@host:/path (e.g. /var/www/leventkaya.com)"; exit 1; fi
+	rsync $(RSYNC_OPTS) $(BUILD_DIR)/ $$RSYNC_DEST
