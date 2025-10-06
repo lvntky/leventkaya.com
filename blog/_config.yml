@@ -23,6 +23,8 @@ plugins:
 
 permalink: /posts/:title.html
 
+favicon: /assets/images/favicon.png
+
 feed:
   path: rss.xml
   # Optional: limit items or include categories
