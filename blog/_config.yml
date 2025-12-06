@@ -2,7 +2,6 @@ url: "https://leventkaya.com"       # production domain, no trailing slash
 baseurl: ""                         # "" for root
 lang: en
 timezone: "Europe/Istanbul"         
-
 title: "Levent Kaya"
 description: "Personal notes on graphics, OS-dev, C/C++ and low-level experiments."
 email: leventkayadev@gmail.com
@@ -12,11 +11,12 @@ favicon: /assets/images/favicon.png
 author:
   name: "Levent Kaya"
   email: leventkayadev@gmail.com
-  social:
-    - name: "GitHub"
-      url: "https://github.com/lvntky"
-    - name: "LinkedIn"
-      url: "https://www.linkedin.com/in/levent-kaya/"
+
+social:
+  - name: "GitHub"
+    url: "https://github.com/lvntky"
+  - name: "LinkedIn"
+    url: "https://www.linkedin.com/in/levent-kaya/"
 
 # Theme + plugins
 theme: jekyll-theme-low
@@ -25,13 +25,11 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
 
-
 permalink: /:year/:month/:day/:title/
 
 # Feed settings
 feed:
   path: rss.xml
-  # limit: 30
 
 defaults:
   - scope:
@@ -39,6 +37,7 @@ defaults:
       type: "posts"
     values:
       layout: "post"
+      image: /assets/images/logo.png  # Add default image for posts
 
 # Markdown + syntax highlighting
 markdown: kramdown
@@ -54,6 +53,7 @@ exclude:
   - Gemfile.lock
   - README.md
 
-logo: /assets/images/logo.png
-image: /assets/images/logo.png
-twitter_username: "lvntky"   # eğer varsa
+# SEO settings - USE ABSOLUTE URLs
+logo: "https://leventkaya.com/assets/images/logo.png"
+image: "https://leventkaya.com/assets/images/logo.png"
+twitter_username: "lvntky"
