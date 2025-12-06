@@ -1,41 +1,59 @@
-# Site identity (improves feed + SEO)
-url: https://leventkaya.com         # <-- set your production domain
+url: "https://leventkaya.com"       # production domain, no trailing slash
 baseurl: ""                         # "" for root
 lang: en
+timezone: "Europe/Istanbul"         
 
-author:
-  name: Levent Kaya
-
-title: Levent Kaya's Website
-description: Personal notes on graphics, OS-dev, C/C++ and low-level experiments.
+title: "Levent Kaya"
+description: "Personal notes on graphics, OS-dev, C/C++ and low-level experiments."
 email: leventkayadev@gmail.com
-author:
-  name: Levent Kaya
-  social:
-    - { name: GitHub,  url: "https://github.com/lvntky" }
-    - { name: LinkedIn, url: "https://www.linkedin.com/in/levent-kaya/" }
+favicon: /assets/images/favicon.png
 
+# Author (single definition)
+author:
+  name: "Levent Kaya"
+  email: leventkayadev@gmail.com
+  social:
+    - name: "GitHub"
+      url: "https://github.com/lvntky"
+    - name: "LinkedIn"
+      url: "https://www.linkedin.com/in/levent-kaya/"
+
+# Theme + plugins
 theme: jekyll-theme-low
 plugins:
   - jekyll-seo-tag
   - jekyll-feed
   - jekyll-sitemap
 
-permalink: /posts/:title.html
 
-favicon: /assets/images/favicon.png
+permalink: /:year/:month/:day/:title/
 
+# Feed settings
 feed:
   path: rss.xml
-  # Optional: limit items or include categories
   # limit: 30
 
-# Make all posts use the post layout
 defaults:
-  - scope: { path: "", type: "posts" }
-    values: { layout: post }
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
 
+# Markdown + syntax highlighting
 markdown: kramdown
 highlighter: rouge
 kramdown:
   input: GFM
+
+# Opsiyonel: exclude / include
+exclude:
+  - node_modules
+  - vendor
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+
+logo: /assets/images/logo.png
+image: /assets/images/logo.png
+twitter_username: "lvntky"   # eğer varsa
