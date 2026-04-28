@@ -3,7 +3,7 @@ baseurl: ""                         # "" for root
 lang: en
 timezone: "Europe/Istanbul"         
 title: "Levent Kaya"
-description: "Personal notes on graphics, OS-dev, C/C++ and low-level experiments."
+description: "Low-level programming blog covering C, graphics programming, OS development, and systems software by Levent Kaya."
 email: leventkayadev@gmail.com
 favicon: /assets/images/favicon.png
 
@@ -25,7 +25,7 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
 
-permalink: /:year/:month/:day/:title/
+permalink: /:title/
 
 # Feed settings
 feed:
