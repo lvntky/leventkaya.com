@@ -2,7 +2,7 @@ url: "https://leventkaya.com"       # production domain, no trailing slash
 baseurl: ""                         # "" for root
 lang: en
 timezone: "Europe/Istanbul"         
-title: "Levent Kaya"
+title: "Levent Kaya | Low-Level Programming, C, Graphics & Systems Software"
 description: "Low-level programming blog covering C, graphics programming, OS development, and systems software by Levent Kaya."
 email: leventkayadev@gmail.com
 favicon: /assets/images/favicon.png
