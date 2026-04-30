@@ -3,6 +3,7 @@ baseurl: ""                         # "" for root
 lang: en
 timezone: "Europe/Istanbul"         
 title: "Levent Kaya"
+description: "Low-level programming blog covering C, graphics programming, OS development, and systems software by Levent Kaya."
 email: leventkayadev@gmail.com
 favicon: /assets/images/favicon.png
 
