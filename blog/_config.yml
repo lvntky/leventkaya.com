@@ -1,24 +1,22 @@
-url: "https://leventkaya.com"       # production domain, no trailing slash
-baseurl: ""                         # "" for root
+url: "https://leventkaya.com"
+baseurl: ""
 lang: en
-timezone: "Europe/Istanbul"         
+timezone: "Europe/Istanbul"
 title: "Levent Kaya"
-description: "Low-level programming blog Levent Kaya covering C graphics programming, OS development, systems software, performance tuning, and hands-on engineering insights."
+description: "Low-level programming, OS internals, graphics from scratch, debugger internals, and retrocomputing. Written in C and C++."
 email: leventkayadev@gmail.com
 favicon: /assets/images/favicon.png
 
-# Author (single definition)
 author:
   name: "Levent Kaya"
   email: leventkayadev@gmail.com
 
 social:
-  - name: "GitHub"
-    url: "https://github.com/lvntky"
-  - name: "LinkedIn"
-    url: "https://www.linkedin.com/in/levent-kaya/"
+  name: "Levent Kaya"
+  links:
+    - "https://github.com/lvntky"
+    - "https://www.linkedin.com/in/lvntky/"
 
-# Theme + plugins
 theme: jekyll-theme-low
 plugins:
   - jekyll-seo-tag
@@ -27,7 +25,6 @@ plugins:
 
 permalink: /:title/
 
-# Feed settings
 feed:
   path: rss.xml
 
@@ -37,23 +34,19 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-      image: /assets/images/logo.png  # Add default image for posts
+      image: "https://leventkaya.com/assets/images/logo.png"
 
-# Markdown + syntax highlighting
 markdown: kramdown
 highlighter: rouge
 kramdown:
   input: GFM
 
-# Opsiyonel: exclude / include
+logo: "https://leventkaya.com/assets/images/logo.png"
+image: "https://leventkaya.com/assets/images/logo.png"
+
 exclude:
   - node_modules
   - vendor
   - Gemfile
   - Gemfile.lock
   - README.md
-
-# SEO settings - USE ABSOLUTE URLs
-logo: "https://leventkaya.com/assets/images/logo.png"
-image: "https://leventkaya.com/assets/images/logo.png"
-twitter_username: "lvntky"
