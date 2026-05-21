@@ -2,8 +2,11 @@ url: "https://leventkaya.com"
 baseurl: ""
 lang: en
 timezone: "Europe/Istanbul"
+
 title: "Levent Kaya"
-description: "Low-level programming, OS internals, graphics from scratch, debugger internals, and retrocomputing. Written in C and C++."
+tagline: "Levent Kaya — Technical Blog and Notes"
+description: "C and C++ deep dives into OS internals, graphics, debugger internals, and retrocomputing."
+
 email: leventkayadev@gmail.com
 favicon: /assets/images/favicon.png
 
@@ -11,11 +14,27 @@ author:
   name: "Levent Kaya"
   email: leventkayadev@gmail.com
 
+twitter_username: lvntky
+
 social:
   name: "Levent Kaya"
   links:
     - "https://github.com/lvntky"
     - "https://www.linkedin.com/in/lvntky/"
+
+bio: "I write about the parts of computing most people never touch — OS
+  internals, Linux systems programming, CPU emulation, graphics from scratch,
+  and retrocomputing. Everything is implemented in C or C++, with full source
+  code. Currently pursuing graduate research in async I/O and syscall runtimes
+  on Linux."
+
+bio_links:
+  - label: "GitHub"
+    url: "https://github.com/lvntky"
+  - label: "Projects"
+    url: "https://leventkaya.com/projects/"
+  - label: "About"
+    url: "https://leventkaya.com/about/"
 
 theme: jekyll-theme-low
 plugins:
