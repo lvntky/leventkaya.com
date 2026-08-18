@@ -4,17 +4,25 @@ lang: en
 timezone: "Europe/Istanbul"
 
 title: "Levent Kaya"
-tagline: "Levent Kaya — Technical Blog and Notes"
+tagline: "C, Operating Systems, and Computer Graphics"
 description: "C and C++ deep dives into OS internals, graphics, debugger internals, and retrocomputing."
-
 email: leventkayadev@gmail.com
+
 favicon: /assets/images/favicon.png
+apple_touch_icon: /apple-touch-icon.png
+logo: "https://leventkaya.com/assets/images/logo.png"
+image: "https://leventkaya.com/assets/images/logo.png"
+
+show_rss: true
+show_archive: true
 
 author:
   name: "Levent Kaya"
   email: leventkayadev@gmail.com
 
-twitter_username: lvntky
+twitter:
+  username: lvntky
+  card: summary_large_image
 
 social:
   name: "Levent Kaya"
@@ -22,21 +30,8 @@ social:
     - "https://github.com/lvntky"
     - "https://www.linkedin.com/in/lvntky/"
 
-bio: "I write about the parts of computing most people never touch — OS
-  internals, Linux systems programming, CPU emulation, graphics from scratch,
-  and retrocomputing. Everything is implemented in C or C++, with full source
-  code. Currently pursuing graduate research in async I/O and syscall runtimes
-  on Linux."
-
-bio_links:
-  - label: "GitHub"
-    url: "https://github.com/lvntky"
-  - label: "Projects"
-    url: "https://leventkaya.com/projects/"
-  - label: "About"
-    url: "https://leventkaya.com/about/"
-
 theme: jekyll-theme-low
+
 plugins:
   - jekyll-seo-tag
   - jekyll-feed
@@ -53,15 +48,11 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-      image: "https://leventkaya.com/assets/images/logo.png"
 
 markdown: kramdown
 highlighter: rouge
 kramdown:
   input: GFM
-
-logo: "https://leventkaya.com/assets/images/logo.png"
-image: "https://leventkaya.com/assets/images/logo.png"
 
 exclude:
   - node_modules
